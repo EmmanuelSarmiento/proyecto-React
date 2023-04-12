@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
 const ItemComponent = (props) => {
   const { title, price, handlerUpdate } = props;
@@ -12,12 +12,12 @@ const ItemComponent = (props) => {
     }
   };
   return (
-    <Fragment>
+    <div>
       <p>{title}</p>
       <p>$ {price}</p>
       <p>{stock}</p>
       <button onClick={handlerActionAdd}>Agregar</button>
-    </Fragment>
+    </div>
   );
 };
 

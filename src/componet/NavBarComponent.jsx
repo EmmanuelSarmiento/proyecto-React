@@ -8,10 +8,10 @@ const NavBarComponent = (props) => {
       <div className="container-fluid">
         <span className="navbar-brand">
           <img
-            src="https://pulsocervecero.com/wp-content/uploads/2020/04/CB_RGB-1200x1200-1-1024x1024.png"
+            src={process.env.PUBLIC_URL + "logo_el_bodeguero.png"}
             alt="Logo"
-            width={100}
-            height={100}
+            width={75}
+            height={75}
             class="d-inline-block align-text-top"
           />
         </span>
