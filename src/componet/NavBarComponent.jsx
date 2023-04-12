@@ -1,20 +1,14 @@
 import React from "react";
 import ListNavBarOptionComponent from "./ListOptionNavBarComponent";
+import CartWidget from "./CartWidget";
+import Logo from "./Logo";
 
 const NavBarComponent = (props) => {
   const nameOptions = ["Cervezas", "Aguas"];
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <span className="navbar-brand">
-          <img
-            src={process.env.PUBLIC_URL + "logo_el_bodeguero.png"}
-            alt="Logo"
-            width={75}
-            height={75}
-            class="d-inline-block align-text-top"
-          />
-        </span>
+        <Logo></Logo>
         <button
           className="navbar-toggler"
           type="button"
@@ -31,16 +25,7 @@ const NavBarComponent = (props) => {
             nameOption={nameOptions}
           ></ListNavBarOptionComponent>
         </div>
-        <span className="navbar-brand">
-          <img
-            src="https://icones.pro/wp-content/uploads/2021/05/icone-de-panier-noir.png"
-            alt="Cart"
-            width={25}
-            height={25}
-            class="d-inline-block align-text-top"
-          />{" "}
-          5
-        </span>
+        <CartWidget></CartWidget>
       </div>
     </nav>
   );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const ItemComponent = (props) => {
   const { title, price, handlerUpdate } = props;
-  const [stock, setStock] = useState(10);
+  const [stock, setStock] = useState(50);
   const handlerActionAdd = () => {
     if (stock > 0) {
       setStock(stock - 1);
