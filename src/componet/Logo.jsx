@@ -8,7 +8,7 @@ const Logo = function Logo(props) {
         alt="Logo"
         width={75}
         height={75}
-        class="d-inline-block align-text-top"
+        className="d-inline-block align-text-top"
       />
     </span>
   );

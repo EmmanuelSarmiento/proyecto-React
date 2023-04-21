@@ -1,10 +1,9 @@
 import React from "react";
 
-const ItemListComponent = function UserGreeting(props) {
+const ItemListComponent = (UserGreeting) => {
   return (
     <div>
       <h1>Bienvenido a El Bodeguero</h1>
-      <h3>Central de bebidas</h3>
     </div>
   );
 };

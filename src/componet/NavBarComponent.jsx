@@ -4,7 +4,12 @@ import CartWidget from "./CartWidget";
 import Logo from "./Logo";
 
 const NavBarComponent = (props) => {
-  const nameOptions = ["Cervezas", "Aguas"];
+  const nameOptions = [
+    "Electrónica",
+    "Joyeria",
+    "Ropa de Hombre",
+    "Ropa de Mujer",
+  ];
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">

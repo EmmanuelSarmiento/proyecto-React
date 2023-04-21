@@ -8,7 +8,7 @@ const CartWidget = function CartWidget(props) {
         alt="Cart"
         width={25}
         height={25}
-        class="d-inline-block align-text-top"
+        className="d-inline-block align-text-top"
       />{" "}
       5
     </span>

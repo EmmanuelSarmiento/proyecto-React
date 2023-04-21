@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+div.card.text-center img.img-fluid.mx-auto {
+  display: flex;
+  width: 20rem;
+  height: 20rem;
+}
