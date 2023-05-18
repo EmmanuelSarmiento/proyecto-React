@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const ItemComponent = ({ data, handlerUpdate }) => {
-  const { image, title, description, price, stock } = data;
+  const { id: idProduct, image, title, description, price, stock } = data;
   const [_stock, _setStock] = useState(stock || 10);
   const handlerActionAdd = () => {
     if (_stock > 0) {
@@ -11,8 +12,9 @@ const ItemComponent = ({ data, handlerUpdate }) => {
       alert("Stock agotado");
     }
   };
+
   return (
-    <div className="card-group row row-cols-1 row-cols-md-2 mt-4">
+    <div className="card-group mt-4">
       <div className="card text-center">
         <img src={image} className="img-fluid mx-auto" alt={title} />
         <div className="card-body">
@@ -21,9 +23,11 @@ const ItemComponent = ({ data, handlerUpdate }) => {
           <p>$ {price}</p>
           <p>{_stock}</p>
         </div>
-        <div className="card-footer text-center">
-          <button onClick={handlerActionAdd}>Agregar</button>
-        </div>
+        <NavLink to={`/products/detail/${idProduct}`}>
+          <div className="card-footer text-center">
+            <button onClick={handlerActionAdd}>Detalle</button>
+          </div>
+        </NavLink>
       </div>
     </div>
   );

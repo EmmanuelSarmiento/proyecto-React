@@ -1,8 +1,9 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Logo = function Logo(props) {
   return (
-    <span className="navbar-brand">
+    <NavLink className="navbar-brand">
       <img
         src={process.env.PUBLIC_URL + "logo_el_bodeguero.png"}
         alt="Logo"
@@ -10,7 +11,7 @@ const Logo = function Logo(props) {
         height={75}
         className="d-inline-block align-text-top"
       />
-    </span>
+    </NavLink>
   );
 };
 

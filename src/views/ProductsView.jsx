@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import ItemListComponent from "../componet/ItemListComponent";
 import ItemComponent from "../componet/ItemComponent";
-import NavBarComponent from "../componet/NavBarComponent";
 import useFetch from "../utils/useFetch";
 const URL = "https://fakestoreapi.com/products";
 
 function ProductsView(props) {
   const [count, setCount] = useState(0);
   const { data, loading } = useFetch(URL);
-
   const updateCount = () => {
     setCount(count + 1);
   };
   return (
     <div>
-      <NavBarComponent />
       <div className="container">
         {loading ? (
           <ItemListComponent></ItemListComponent>
