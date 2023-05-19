@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const ItemComponent = ({ data, handlerUpdate }) => {
-  const { id: idProduct, image, title, description, price, stock } = data;
+  const { id, image, title, description, price, stock } = data;
   const [_stock, _setStock] = useState(stock || 100);
   const handlerActionAdd = () => {
     if (_stock > 0) {
@@ -23,7 +23,7 @@ const ItemComponent = ({ data, handlerUpdate }) => {
           <p>$ {price}</p>
           <p>{_stock}</p>
         </div>
-        <NavLink to={`/products/detail/${idProduct}`}>
+        <NavLink to={`/products/detail/${id}`}>
           <div className="card-footer text-center">
             <button onClick={handlerActionAdd}>Detalle</button>
           </div>

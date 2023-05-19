@@ -1,24 +1,41 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../utils/useFetch";
-import GeneralContext from "../context/GeneralContext";
-
-const URL = "https://fakestoreapi.com/products";
 
 const DetailProductView = () => {
+  const [product, setProduct] = useState(null);
   const { idProduct } = useParams();
-  const { updateCounter } = useContext(GeneralContext);
-  const [data] = useFetch(`${URL}/${idProduct}`);
-  const { title, image, description, price, category } = data;
-  const addBtnAction = () => {
-    updateCounter();
-  };
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(
+          `https://fakestoreapi.com/products/${idProduct}`
+        );
+        const data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        console.log(
+          "Hubo un error al obtener los detalles del producto",
+          error
+        );
+      }
+    };
+
+    fetchProduct();
+  }, [idProduct]);
+
+  if (!product) {
+    return <p>Cargando...</p>;
+  }
+
+  const { title, image, description, price, category } = product;
+
   return (
     <div>
       <div className="row my-5">
         <div className="col-4">
           <h3>
-            Categoria: <span className="text-info">{category}</span>
+            Categoría: <span className="text-info">{category}</span>
           </h3>
         </div>
       </div>
@@ -40,12 +57,6 @@ const DetailProductView = () => {
                   <p className="card-text">
                     <small className="text-muted">$ {price}</small>
                   </p>
-                  <button
-                    onClick={addBtnAction}
-                    className="btn btn-outline-danger btn-sm"
-                  >
-                    Comprar
-                  </button>
                 </div>
               </div>
             </div>
