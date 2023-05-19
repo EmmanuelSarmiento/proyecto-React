@@ -3,16 +3,15 @@ import "./App.css";
 import ProductsView from "./views/ProductsView";
 import NavBarComponent from "./componet/NavBarComponent";
 import DetailProductView from "./views/DetailProductView";
-import { routes } from "./routes";
 
 function App() {
   return (
     <BrowserRouter>
       <NavBarComponent />
       <Routes>
-        <Route path={routes.root} element={<ProductsView />} />
+        <Route path="/" element={<ProductsView />} />
         <Route
-          path={routes.detailProductView}
+          path="/products/detail/:idProduct"
           element={<DetailProductView />}
         ></Route>
       </Routes>

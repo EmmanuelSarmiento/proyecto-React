@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const ItemComponent = ({ data, handlerUpdate }) => {
   const { id: idProduct, image, title, description, price, stock } = data;
-  const [_stock, _setStock] = useState(stock || 10);
+  const [_stock, _setStock] = useState(stock || 100);
   const handlerActionAdd = () => {
     if (_stock > 0) {
       _setStock(_stock - 1);
