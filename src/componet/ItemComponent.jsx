@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const ItemComponent = ({ data, handlerUpdate }) => {
-  const { id, image, title, description, price, stock } = data;
+  const { id, image, title, price, stock } = data;
   const [_stock, _setStock] = useState(stock || 100);
   const handlerActionAdd = () => {
     if (_stock > 0) {
@@ -19,7 +19,6 @@ const ItemComponent = ({ data, handlerUpdate }) => {
         <img src={image} className="img-fluid mx-auto" alt={title} />
         <div className="card-body">
           <p>{title}</p>
-          <p>{description}</p>
           <p>$ {price}</p>
           <p>{_stock}</p>
         </div>

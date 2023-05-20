@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Logo = function Logo(props) {
   return (
-    <NavLink className="navbar-brand">
+    <NavLink className="navbar-brand" to="/">
       <img
         src={process.env.PUBLIC_URL + "logo_el_bodeguero.png"}
         alt="Logo"

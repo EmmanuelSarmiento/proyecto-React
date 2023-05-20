@@ -2,14 +2,11 @@ import React from "react";
 import ListNavBarOptionComponent from "./ListOptionNavBarComponent";
 import CartWidget from "./CartWidget";
 import Logo from "./Logo";
+import useFetch from "../utils/useFetch";
+const URL = "https://fakestoreapi.com/products/categories";
 
 const NavBarComponent = (props) => {
-  const nameOptions = [
-    "Electrónica",
-    "Joyeria",
-    "Ropa de Hombre",
-    "Ropa de Mujer",
-  ];
+  const { data } = useFetch(URL);
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -27,7 +24,7 @@ const NavBarComponent = (props) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <ListNavBarOptionComponent
-            nameOption={nameOptions}
+            nameOption={data}
           ></ListNavBarOptionComponent>
         </div>
         <CartWidget></CartWidget>
